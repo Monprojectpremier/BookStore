@@ -1,0 +1,88 @@
+@media screen and (max-width: 720px){
+	
+
+	.navbar{
+	height: auto;
+	}
+	.navbar-brand {
+	width: 30%;
+	}
+	.navbar-brand img{
+	padding: 5px;
+	border-radius: 3PX;
+	margin: 0;
+	margin-top: 5PX;
+	width: 80%;
+	margin-left: 20PX;
+	}
+
+	.carousel-indicators li {
+    display: none;
+	}
+	.navbar-inverse .navbar-collapse, .navbar-inverse .navbar-form {
+    border-color: #F7EE00;
+	}
+
+	.about-us-left{
+	float: left;
+	width: 100%;
+	}
+
+	#about-us{
+	
+	padding: 50px 0;
+	}
+	.about-us h2{
+	font-size: 25px;
+	margin-bottom: 20px;
+
+	}
+	.about-us p{
+	font-size: 16px;
+	}
+
+	#work h2{
+
+	font-size: 25px;
+	margin-bottom: 30px;
+	}
+	.work p{
+		font-size: 18px;	
+	}
+	.work ul li i{
+		margin-top: 12px;
+		
+	}
+
+	.private-left{
+	width: 100%;
+	padding: 20px 20px 30px 20px;
+	}
+	.private-left ul li i{
+		margin-top: 12px;
+	}
+	.private-right{
+		width: 100%;
+		background:linear-gradient(rgba(0,0,0,0.9), rgba(0,0,0,0.1)),url(../image/parviate.jpeg)   center fixed ;
+	}
+
+	.product{
+	float: left;
+	width: 100%;
+	padding: 10px 20px;
+	}
+	.product-left{
+		margin-bottom: 20px;
+		float: left;
+		width: 100%;
+	}
+	.package h2{
+	text-align: center;
+	font-family: 'Acme', sans-serif;
+	margin-bottom: 30px;
+	}
+		
+	
+
+
+}

@@ -1,0 +1,172 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.w3.org/1000/xhtml">
+<head th:replace="common/header :: common-header" />
+<body>
+	<div th:replace="common/header :: navbar"></div>
+
+	<div class="container">
+		<div class="row" style="margin-bottom: 100px;">
+			<div class="col-xs-8">
+				<h2 class="section-headline"></h2>
+			</div>
+
+		</div>
+		
+		<img class="img-responsive" src="/image/wood.png"
+			style="margin-top: -75px;" />
+		
+
+		<h2 class="section-headline">
+			<span
+				th:text="${user}?'Bonjour  ' + ${#strings.toUpperCase(user.username)} : 'All Books'"> </span>
+	! Voici le détail de l'annonce	</h2>
+
+		<form th:action="@{/shoppingCart/addItem}" method="post">
+			<input hidden="hidden" th:field="*{book.id}" />
+			<div class="row" style="margin-top: 120px;">
+				<div class="col-xs-3">
+					<a th:href="@{/bookshelf}">Retourner aux annonces</a><br /> <img
+						style="display: none;" class="img-responsive shelf-book"
+						th:src="#{adminPath}+@{/image/book/}+${book.id}+'.png'" />
+				</div>
+
+				<div class="col-xs-9">
+					<h3>
+						<span th:if="${addBookSuccess}" style="color:#ffae42"><i
+							class="fa fa-check" aria-hidden="true" style="color: #ffae42"></i>C'est enrégistré. Veuillez continuer
+						
+						<a class="btn btn-primary"
+							th:href="@{/shoppingCart/cart}">Continuer</a>
+					
+						
+						
+							</span>
+							
+							
+						
+							
+							
+					</h3>
+					<h3>
+						<span th:if="${notEnoughStock}" style="color: red">Oops,
+							only <span th:text="${book.inStockNumber}"></span> In Stock.
+						</span>
+					</h3> 
+					<h5>
+						<strong>Port ou aéroport d'arrivée: </strong>
+						<h5 th:text="${book.title}">Book Title</h5>
+						<p>
+							<strong>Pays d'arrivée: </strong><span th:text="${book.category}"></span>
+						</p>
+						<div class="row">
+
+							<div class="col-xs-5">
+								<h5>
+									<strong>Port ou aéroport de départ: </strong><span
+										th:text="${book.arrivalPortAirport}"></span>
+								</h5>
+
+
+								<p>
+									<strong>Date de départ: </strong><span
+										th:text="${book.publicationDate}"></span>
+								</p>
+
+								<p>
+									<strong>Date d'arrivée estimée: </strong><span
+										th:text="${book.estimateArrivalDate}"></span>
+								</p>
+
+								<p style="display: none;">
+									<strong>Date du départ: </strong><span
+										th:text="${book.publisher}"></span>
+								</p>
+
+
+								<p>
+									<strong>Mode de transport: </strong><span
+										th:text="${book.mode}"></span>
+								</p>
+
+								<p>
+									<strong>Transporteur: </strong><span th:text="${book.author}"></span>
+								</p>
+
+								<p>
+									<strong>Format souhaité: </strong><br />
+									<span th:text="${book.format}"></span>
+								</p>
+								<p>
+									<strong>Poids maximum: </strong><br />
+									<span th:text="${book.shippingWeight}"></span> Kilogrammes
+								</p>
+
+
+								<p style="display: none;">
+									<strong>Language: </strong><span th:text="${book.language}"></span>
+								</p>
+
+
+								<p style="display: none;">
+									<strong>ISBN: </strong><span th:text="${book.isbn}"></span>
+								</p>
+
+							</div>
+
+							<div class="col-xs-7">
+								<div class="panel panel-default"
+									style="border-width: 5px; margin-top: 20px;">
+									<div class="panel-body">
+										<div class="row">
+											<div class="col-xs-6">
+												<h4>
+													Prix HT : <span style="color: #db3208;"><span
+														th:text="${#numbers.formatDecimal(book.ourPrice, 0 , 'COMMA', 2, 'POINT')}"></span>
+														€</span>
+												</h4>
+												<p style="display: none;">
+													List Price: <span style="display: none;"><span
+														th:text="${book.listPrice}"></span></span>
+												</p>
+												<p style="display: none;">
+													You save: $<span
+														th:text="${#numbers.formatDecimal((book.listPrice - book.ourPrice), 0, 'COMMA', 2, 'POINT' )}"></span>
+												</p>
+												<span style="display: none;">Qty: </span> <select
+													style="display: none;" name="qty">
+													<option th:each="qty : ${qtyList}" th:value="${qty}"
+														th:text="${qty}"></option>
+												</select>
+											</div>
+											<div class="col-xs-6">
+												<h4 th:if="*{book.inStockNumber&gt;10}"
+													style="visibility: hidden;">In Stock</h4>
+												<h4
+													th:if="*{book.inStockNumber&lt;10 and book.inStockNumber&gt;0}"
+													style="visibility: hidden;">
+													Only <span th:text="${book.inStockNumber}"> </span> In
+													Stock
+												</h4>
+												<h4 th:if="*{book.inStockNumber==0}"
+													style="visibility: hidden;">Unavailable</h4>
+												<button type="submit" class="btn btn-warning"
+													style="color: black; border: 1px solid black; padding: 10px 20px 10px 20px;">Enrégistrer</button>
+											</div>
+										</div>
+									</div>
+								</div>
+							</div>
+						</div>
+
+						<hr />
+						<p th:utext="${book.description}"></p>
+				</div>
+			</div>
+		</form>
+	</div>
+	<!-- end of container -->
+	<div th:replace="common/header :: footer" />
+
+	<div th:replace="common/header :: body-bottom-scripts" />
+</body>
+</html>

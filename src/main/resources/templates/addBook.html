@@ -1,0 +1,419 @@
+
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.w3.org/1000/xhtml">
+<head th:replace="common/header :: common-header" />
+
+<body>
+	<div th:replace="common/header :: navbar" > </div>
+
+	<div class="container">
+		<div class="row">
+			<form class="form-horizontal" th:action="@{/book/add}" method="post"
+				enctype="multipart/form-data">
+				<fieldset>
+					<legend class="center-block">
+						Nouvelles informations<span style="font-size: small"> * Champs obligatoires
+							</span>
+					</legend>
+                      </fieldset>
+
+					<!-- title -->
+					<div class="form-group">
+						<label class="col-md-2 control-label" for="title"> Port ou aéroport de d'arrivée</label>
+
+						<div class="col-md-8">
+							<input type="text" name="title" class="form-control" id="title"
+								th:value="${book.title}"  placeholder="Port ou aéroport d'arrivée" />
+								<span class="help-block"></span>
+						</div>
+					</div>
+
+					
+					<div class="form-group">
+						<label class="col-md-2 control-label" for="title"> Port ou aéroport de départ</label>
+
+
+
+						<div class="col-md-8">
+							<input type="text" name="arrivalPortAirport" class="form-control" id="arrivalPortAirport"
+								th:value="${book.arrivalPortAirport}"  placeholder="Port ou aéroport d'arrivée" />
+							<span class="help-block"></span>
+						</div>
+					</div>
+					
+					
+					
+					
+
+<!-- title -->
+
+
+	<!-- category -->
+					<div class="form-group">
+						<label class="col-md-2 control-label" for="category">*
+							Pays d'arrivée</label>
+						<div class="col-md-8">
+							<select th:value="${book.category}" id="category" name="category"
+								class="form-control" required="required">
+								<option value="" selected="selected" disabled="disabled">Sélectionnez le pays d'arrivée...</option>
+								<option value="Algerie"
+								th:selected="(${book.category}=='Algerie')">Algérie</option>
+								<option value="Allemagne" th:selected="(${book.category}=='Allemagne')">Allemagne</option>
+								<option value="Angleterre" th:selected="(${book.category}=='Angleterre')">Angleterre</option>
+								<option value="Bangladesh" th:selected="(${book.category}=='Bangladesh')">Bangladesh</option>
+							<option value="Belgique"
+								th:selected="(${book.category}=='Belgique')">Belgique</option>
+								<option value="Benin" th:selected="(${book.category}=='Benin')">Bénin</option>
+								
+							<option value="Burkina"
+								th:selected="(${book.category}=='Burkina')">Burkina-Faso</option>
+								
+							<option value="Cambodge" th:selected="(${book.category}=='Cambodge')">Cambodge</option>
+							<option value="Cameroun" th:selected="(${book.category}=='Cameroun')">Cameroun</option>
+							<option value="Canada" th:selected="(${book.category}=='Canada')">Canada</option>
+							<option value="Centrafrique"
+								th:selected="(${book.category}=='Centrafrique')">Centrafrique</option>
+							<option value="Chine" th:selected="(${book.category}=='Chine')">Chine</option>
+							<option value="Comores" th:selected="(${book.category}=='Comores')">Comores</option>
+							<option value="Congo" th:selected="(${book.category}=='Congo')">Congo</option>
+							<option value="Coteivoire"
+								th:selected="(${book.category}=='Coteivoire')">Côte	d'Ivoire</option>
+								
+								
+								<option value="Egypte"
+								th:selected="(${book.category}=='Egypte')">Egypte</option>
+								
+							<option value="Ethiopie"
+								th:selected="(${book.category}=='Ethiopie')">Ethiopie</option>
+							<option value="Gabon" th:selected="(${book.category}=='Gabon')">Gabon</option>
+							<option value="France" th:selected="(${book.category}=='France')">France</option>
+							<option value="Gambie" th:selected="(${book.category}=='Gambie')">Gambie</option>
+							<option value="Ghana" th:selected="(${book.category}=='Ghana')">Ghana</option>
+							<option value="Guadeloupe"
+								th:selected="(${book.category}=='Guadeloupe')">Guadeloupe</option>
+							<option value="Guyane" th:selected="(${book.category}=='Guyane')">Guyane</option>
+							<option value="Guinee" th:selected="(${book.category}=='Guinee')">Guinée</option>
+							<option value="Haiti" th:selected="(${book.category}=='Haiti')">Haiti</option>
+							<option value="Hollande" th:selected="(${book.category}=='Hollande')">Hollande</option>
+							<option value="Inde" th:selected="(${book.category}=='Inde')">Inde</option>
+							
+							<option value="Israel" th:selected="(${book.category}=='Israel')">Israel</option>
+							<option value="Italie" th:selected="(${book.category}=='Italie')">Italie</option>
+							<option value="Laos" th:selected="(${book.category}=='Laos')">Laos</option>
+								<option value="Liban" th:selected="(${book.category}=='Liban')">Liban</option>
+							<option value="Madagascar" th:selected="(${book.category}=='Madagascar')">Madagascar</option>
+							<option value="Malaisie" th:selected="(${book.category}=='Malaisie')">Malaisie</option>
+							<option value="Mali" th:selected="(${book.category}=='Mali')">Mali</option>
+							<option value="Martinique"
+								th:selected="(${book.category}=='Martinique')">Martinique</option>
+								<option value="Mauritanie"
+								th:selected="(${book.category}=='Mauritanie')">Mauritanie</option>
+								
+								<option value="Maroc"
+								th:selected="(${book.category}=='Maroc')">Maroc</option>
+								
+								
+							<option value="Mayotte"
+								th:selected="(${book.category}=='Mayotte')">Mayotte</option>
+							<option value="Niger" th:selected="(${book.category}=='Niger')">Niger</option>
+							<option value="Nigeria"
+								th:selected="(${book.category}=='Nigeria')">Nigéria</option>
+							<option value="RDC" th:selected="(${book.category}=='RDC')">République Démocratique du Congo</option>
+							<option value="Rwanda" th:selected="(${book.category}=='Rwanda')">Rwanda</option>
+							<option value="Senegal"
+								th:selected="(${book.category}=='Senegal')">Sénégal</option>
+							<option value="Soudan" th:selected="(${book.category}=='Soudan')">Soudan</option>
+							<option value="Suisse" th:selected="(${book.category}=='Suisse')">Suisse</option>
+							
+							<option value="Srilanka" th:selected="(${book.category}=='Srilanka')">Sri Lanka</option>
+							<option value="Tanzanie" th:selected="(${book.category}=='Tanzanie')">Tanzanie</option>
+							<option value="Tchad" th:selected="(${book.category}=='Tchad')">Tchad</option>
+							<option value="Thailande" th:selected="(${book.category}=='Thailande')">Thailande</option>
+							<option value="Togo" th:selected="(${book.category}=='Togo')">Togo</option>
+							<option value="Tunisie"
+								th:selected="(${book.category}=='Tunisie')">Tunisie</option>
+								
+								<option value="Turquie"
+								th:selected="(${book.category}=='Turquie')">Turquie</option>
+								
+								<option value="Pakistan"
+								th:selected="(${book.category}=='Pakistan')">Pakistan</option>
+								<option value="Vietnam"
+								th:selected="(${book.category}=='Vietnam')">Viêt Nam</option>
+								
+								
+							</select>
+						</div>
+					</div>
+
+					<!-- pages -->
+
+
+
+					<!-- author -->
+					<div class="form-group">
+						<label class="col-md-2 control-label" for="author">* Nom et prénom</label>
+						<div class="col-md-8">
+							<input type="text" name="author" class="form-control" id="author"
+								th:value="${book.author}" required="required"
+								placeholder="Nom et Prénom" /> <span class="help-block"></span>
+						</div>
+					</div>
+					
+					
+					<!-- isbn 
+					<div class="form-group" >
+						<label class="col-md-2 control-label" for="emailAnce">* Email</label>
+
+						<div class="col-md-8">
+							<input type="text" name="emailAnce" class="form-control" id="emailAnce"
+						   th:value="${book.emailAnce}" placeholder="email@example.com" required="required"/> <span
+								class="help-block"></span>
+						</div>
+					</div>  
+					
+					-->
+
+					<!-- publisher -->
+					<div class="form-group">
+						<label class="col-md-2 control-label" for="publisher">* Téléphone</label>
+						<div class="col-md-8">
+							<input type="text" name="publisher" class="form-control"
+								id="publisher" th:value="${book.publisher}" required="required"
+								placeholder="Téléphone" /> <span class="help-block">
+								</span>
+						</div>
+					</div>
+
+					<!-- publication date -->
+					<div class="form-group">
+						<label class="col-md-2 control-label" for="publicationDate">* Date de départ
+							</label>
+						<div class="col-md-8">
+							<input type="date" class="form-control" id="publicationDate"
+								name="publicationDate" th:value="${book.publicationDate}"
+								placeholder="Date de départ" required="required" /> <span class="help-block"></span>
+						</div>
+					</div>
+					
+				
+					
+					<div class="form-group">
+						<label class="col-md-2 control-label" for="publicationDate">* Date d'arrivée estimée
+							</label>
+						<div class="col-md-8">
+							<input type="date" class="form-control" id="estimateArrivalDate"
+								name="estimateArrivalDate" th:value="${book.estimateArrivalDate}"
+								placeholder="Date d'arrivée" required="required" /> <span class="help-block"></span>
+						</div>
+					</div>
+
+					
+		
+					
+					<div class="form-group" style="display:none;">
+						<label class="col-md-2 control-label" for="pageNumber">* Durée extimative du transport
+							</label>
+						<div class="col-md-8">
+							<div class="input-group">
+								<input th:value="${book.numberOfPages}" type="number"  min="0"
+									name="numberOfPages" class="form-control" id="pageNumber"
+									placeholder="Durée du transport extimée en nombre de jours" required="required" /> <span
+									class="input-group-addon" >JOURS</span>
+							</div>
+							
+						</div>
+					</div>
+					
+					
+					
+					
+					
+				
+				
+
+					<!-- format -->
+					<div class="form-group">
+						<label class="col-md-2 control-label" for="format">Format accepté</label>
+						<div class="col-md-8">
+							<select th:value="${book.format}" id="format" name="format"
+								class="form-control">
+								<option value="" selected="selected" disabled="disabled">Sélectionnez le format que vous pouvez accepter...</option>
+								<option value="Taille S : Peut tenir dans une boite à chaussure (Courrier, téléphone...)">Taille S : Peut tenir dans une boite à chaussure (Courrier, téléphone...) </option>
+								<option value="Taille M : Peux tenir dans un bagage à main (Ordinateur, livre, dossier...) ">Taille M : Peux tenir dans un bagage à main (Ordinateur, livre, dossier...) </option>
+								<option value="Taille L : Peux tenir dans un coffre de voiture (Chaise, Télévision...)">Taille L : Peux tenir dans un coffre de voiture (Chaise, Télévision...) </option>
+								<option value="Taille XL :Tous grands objets (Meubles, table, voiture, pneu...)">Taille XL :Tous grands objets (Meubles, table, voiture, pneu...) </option>
+							</select>
+						</div>
+					</div>
+
+
+
+	<!-- mode 
+					<div class="form-group">
+						<label class="col-md-2 control-label" for="format">Mode de transport</label>
+						<div class="col-md-8">
+							<select th:value="${book.mode}" id="mode" name="mode"
+								class="form-control">
+								<option value="" selected="selected" disabled="disabled">Sélectionnez votre mode de transport...</option>
+								<option value="Par bâteau">Par bâteau</option>
+								<option value="Par bâteau">Par avion </option>
+								
+							</select>
+						</div>
+					</div>
+-->
+
+
+<!-- isbn -->
+					<div class="form-group">
+						<label class="col-md-2 control-label" for="mode">* Votre email</label>
+
+						<div class="col-md-8">
+							<input type="text" name="mode" class="form-control" id="mode"
+								th:value="${book.mode}" placeholder="email@example.com" /> <span
+								class="help-block"></span>
+						</div>
+					</div>
+
+
+
+
+					<!-- isbn -->
+					<div class="form-group" style="display:none;">
+						<label class="col-md-2 control-label" for="isbn">ISBN</label>
+
+						<div class="col-md-8">
+							<input type="text" name="isbn" class="form-control" id="isbn"
+								th:value="${book.isbn}" placeholder="ISBN" /> <span
+								class="help-block">ISBN of the book</span>
+						</div>
+					</div>
+
+					<!-- shipping weight -->
+					<div class="form-group">
+						<label class="col-md-2 control-label" for="shippingWeight">Poids maximum
+							</label>
+						<div class="col-md-8">
+							<div class="input-group">
+								<input th:value="${book.shippingWeight}" type="number"  min="0"
+									name="shippingWeight" class="form-control" id="shippingWeight"
+									placeholder="Poids maximum" /> <span
+									class="input-group-addon">KG</span>
+							</div>
+							
+						</div>
+					</div>
+					
+					
+				
+					
+
+					<!-- list price -->
+					<div class="form-group" style="display:none;">
+						<label class="col-md-2 control-label" for="listPrice">List
+							Price</label>
+						<div class="col-md-8">
+							<div class="input-group">
+								<span class="input-group-addon">$</span> <input
+									th:value="${book.listPrice}" type="number" name="listPrice" step="0.01"
+									class="form-control" id="listPrice" placeholder="List Price" />
+							</div>
+							<span class="help-block">List price of the book</span>
+						</div>
+					</div>
+
+					<!-- our price -->
+					<div class="form-group">
+						<label class="col-md-2 control-label" for="ourPrice">* Votre prix</label>
+						<div class="col-md-8">
+							<div class="input-group">
+								 <input
+									th:value="${book.ourPrice}" type="number"  min="0" name="ourPrice" 
+									class="form-control" id="ourPrice" placeholder="Our Price"  required="required"/><span class="input-group-addon">€</span>
+							</div>
+							<span class="help-block"></span>
+						</div>
+					</div>
+
+
+
+
+
+					<!-- language -->
+					<div class="form-group">
+						<label class="col-md-2 control-label" for="language">Votre IBAN</label>
+						<div class="col-md-8">
+							<input type="text" name="language" class="form-control" id="language" th:value="${book.language}"  
+							placeholder="Ceci nous permettra de vous payer par virement si vous le souhaitez."	/> <span class="help-block">
+								</span>
+								
+						</div>
+					</div>
+
+					<!-- in stock number -->
+					<div class="form-group" style="display:none;">
+						<label class="col-md-2 control-label" for="inStockNumber">Number
+							in stock</label>
+						<div class="col-md-8">
+							<input th:value="${book.inStockNumber}" type="number"
+								name="inStockNumber" class="form-control" id="inStockNumber"
+								placeholder="Number of in-stock copies" /> <span
+								class="help-block">Number of in-stock copies</span>
+									<script type="text/javascript">
+							document.getElementById("inStockNumber")
+									.setAttribute('value', '10000');
+						</script>
+								
+						</div>
+					</div>
+
+					<!-- status of book -->
+					<div class="form-group" style="display:none;">
+						<label class="col-md-2 control-label" for="status">Mode transport</label>
+						<div class="col-md-8">
+							<label><input value="true" type="radio" name="active"
+								checked="checked" /> Bâteau </label> <label><input
+								value="false" type="radio" name="active" />
+								Avion </label> <span class="help-block"></span>
+						</div>
+					</div>
+
+					<!-- description -->
+					<div class="form-group">
+						<label class="col-md-2 control-label" for="description">Annonce</label>
+						<div class="col-md-8">
+							<textarea name="description" rows="5" class="form-control"
+								id="description" th:value="${book.description}"
+								placeholder="Descrivez vos conditions pour le transport" required="required" ></textarea>
+							<span class="help-block"></span>
+						</div>
+					</div>
+
+					<!-- upload image -->
+					<div class="form-group">
+						<div class="col-md-2">
+							<label for="bookImage">Votre pièce d'identité</label>
+						</div>
+						<div class="col-md-8">
+							<input id="bookImage" type="file" name="bookImage"
+								th:value="${book.bookImage}" />
+						</div>
+					</div>
+
+					<div class="form-group">
+						<div class="col-md-2"></div>
+						<div class="col-md-8">
+							<button type="submit" class="btn btn-success">Ajouter</button>
+							<a class="btn btn-danger" th:href="@{/}">Annuler</a>
+						</div>
+					</div>
+				</fieldset>
+			</form>
+		</div>
+	</div>
+
+<div th:replace="common/header :: footer"> </div>
+	<div th:replace="common/header :: body-bottom-scripts" > </div>
+</body>
+</html>

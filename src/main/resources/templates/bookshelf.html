@@ -1,0 +1,303 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.w3.org/1000/xhtml">
+<head th:replace="common/header :: common-header" />
+
+<body>
+	<div th:replace="common/header :: navbar"></div>
+
+	<div class="container">
+		<div class="row" style="margin-bottom: -100px; margin-top: 100px;">
+			<div class="col-xs-8">
+				<h2 class="section-headline">
+					<h2 class="section-headline">
+						<span
+							th:text="   ${user}?'Bonjour  ' +  ${#strings.toUpperCase(user.username)} : 'Les annonces'"></span>
+					</h2>
+				</h2>
+			</div>
+
+		</div>
+		<hr
+			style="position: absolute; width: 100%; height: 6px; background-color: #333; z-index: -1; margin-top: -80px;" />
+		<img class="img-responsive" src="/image/wood.png"
+			style="margin-top: -75px;" />
+
+		<div class="row" style="margin-top: 60px;">
+			<div class="col-xs-3">
+				<h4>
+					<label for="category">Sélectionnez le pays</label>
+				</h4>
+				<div class="list-group" id="category">
+					<a th:href="@{/bookshelf(category='all')}"
+						th:classappend="${activeAll}? 'active'" class="list-group-item">Toutes
+						destinations</a> <a th:href="@{/searchByCategory(category='Algerie')}"
+						th:classappend="${activeAlgerie}? 'active'"
+						class="list-group-item">Algérie</a> <a
+						th:href="@{/searchByCategory(category='Allemagne')}"
+						th:classappend="${activeAllemagne}? 'active'"
+						class="list-group-item">Allemagne</a> <a
+						th:href="@{/searchByCategory(category='Angleterre')}"
+						th:classappend="${activeAngleterre}? 'active'"
+						class="list-group-item">Angleterre</a> <a
+						th:href="@{/searchByCategory(category='Bangladesh')}"
+						th:classappend="${activeBangladesh}? 'active'"
+						class="list-group-item">Bangladesh</a> <a
+						th:href="@{/searchByCategory(category='Belgique')}"
+						th:classappend="${activeBelgique}? 'active'"
+						class="list-group-item">Belgique</a> <a
+						th:href="@{/searchByCategory(category='Benin')}"
+						th:classappend="${activeBenin}? 'active'" class="list-group-item">Bénin</a>
+					<a th:href="@{/searchByCategory(category='Burkina')}"
+						th:classappend="${activeBurkina}? 'active'"
+						class="list-group-item">Burkina-Faso</a> <a
+						th:href="@{/searchByCategory(category='Cambodge')}"
+						th:classappend="${activeCambodge}? 'active'"
+						class="list-group-item">Cambodge</a> <a
+						th:href="@{/searchByCategory(category='Cameroun')}"
+						th:classappend="${activeCameroun}? 'active'"
+						class="list-group-item">Cameroun</a> <a
+						th:href="@{/searchByCategory(category='Canada')}"
+						th:classappend="${activeCanada}? 'active'" class="list-group-item">Canada</a>
+
+					<a th:href="@{/searchByCategory(category='Centrafrique')}"
+						th:classappend="${activeCentrafrique}? 'active'"
+						class="list-group-item">Centrafrique</a> <a
+						th:href="@{/searchByCategory(category='Chine')}"
+						th:classappend="${activeChine}? 'active'" class="list-group-item">Chine</a>
+					<a th:href="@{/searchByCategory(category='Comores')}"
+						th:classappend="${activeComores}? 'active'"
+						class="list-group-item">Comores</a> <a
+						th:href="@{/searchByCategory(category='Congo')}"
+						th:classappend="${activeCongo}? 'active'" class="list-group-item">Congo</a>
+					<a th:href="@{/searchByCategory(category='Coteivoire')}"
+						th:classappend="${activeCoteivoire}? 'active'"
+						class="list-group-item">Côte d'Ivoire</a> <a
+						th:href="@{/searchByCategory(category='Egypte')}"
+						th:classappend="${activeEgypte}? 'active'" class="list-group-item">Egypte</a>
+
+					<a th:href="@{/searchByCategory(category='Ethiopie')}"
+						th:classappend="${activeEthiopie}? 'active'"
+						class="list-group-item">Ethiopie</a> <a
+						th:href="@{/searchByCategory(category='Gabon')}"
+						th:classappend="${activeGabon}? 'active'" class="list-group-item">Gabon</a>
+					<a th:href="@{/searchByCategory(category='France')}"
+						th:classappend="${activeFrance}? 'active'" class="list-group-item">France</a>
+					<a th:href="@{/searchByCategory(category='Gambie')}"
+						th:classappend="${activeGambie}? 'active'" class="list-group-item">Gambie</a>
+					<a th:href="@{/searchByCategory(category='Ghana')}"
+						th:classappend="${activeGhana}? 'active'" class="list-group-item">Ghana</a>
+					<a th:href="@{/searchByCategory(category='Guadeloupe')}"
+						th:classappend="${activeGuadeloupe}? 'active'"
+						class="list-group-item">Guadeloupe</a> <a
+						th:href="@{/searchByCategory(category='Guyane')}"
+						th:classappend="${activeGuyane}? 'active'" class="list-group-item">Guyane</a>
+					<a th:href="@{/searchByCategory(category='Guinee')}"
+						th:classappend="${activeGuinee}? 'active'" class="list-group-item">Guinée</a>
+					<a th:href="@{/searchByCategory(category='Haiti')}"
+						th:classappend="${activeHaiti}? 'active'" class="list-group-item">Haiti</a>
+					<a th:href="@{/searchByCategory(category='Hollande')}"
+						th:classappend="${activeHollande}? 'active'"
+						class="list-group-item">Hollande</a> <a
+						th:href="@{/searchByCategory(category='Inde')}"
+						th:classappend="${activeInde}? 'active'" class="list-group-item">Inde</a>
+
+					<a th:href="@{/searchByCategory(category='Israel')}"
+						th:classappend="${activeIsrael}? 'active'" class="list-group-item">Israel</a>
+					<a th:href="@{/searchByCategory(category='Italie')}"
+						th:classappend="${activeItalie}? 'active'" class="list-group-item">Italie</a>
+					<a th:href="@{/searchByCategory(category='Laos')}"
+						th:classappend="${activeLaos}? 'active'" class="list-group-item">Laos</a>
+					<a th:href="@{/searchByCategory(category='Liban')}"
+						th:classappend="${activeLiban}? 'active'" class="list-group-item">Liban</a>
+					<a th:href="@{/searchByCategory(category='Madagascar')}"
+						th:classappend="${activeMadagascar}? 'active'"
+						class="list-group-item">Madagascar</a> <a
+						th:href="@{/searchByCategory(category='Malaisie')}"
+						th:classappend="${activeMalaisie}? 'active'"
+						class="list-group-item">Malaisie</a> <a
+						th:href="@{/searchByCategory(category='Mali')}"
+						th:classappend="${activeMali}? 'active'" class="list-group-item">Mali</a>
+					<a th:href="@{/searchByCategory(category='Martinique')}"
+						th:classappend="${activeMartinique}? 'active'"
+						class="list-group-item">Martinique</a> <a
+						th:href="@{/searchByCategory(category='Mauritanie')}"
+						th:classappend="${activeMauritanie}? 'active'"
+						class="list-group-item">Mauritanie</a> <a
+						th:href="@{/searchByCategory(category='Maroc')}"
+						th:classappend="${activeMaroc}? 'active'" class="list-group-item">Maroc</a>
+
+					<a th:href="@{/searchByCategory(category='Mayotte')}"
+						th:classappend="${activeMayotte}? 'active'"
+						class="list-group-item">Mayotte</a> <a
+						th:href="@{/searchByCategory(category='Niger')}"
+						th:classappend="${activeNiger}? 'active'" class="list-group-item">Niger</a>
+					<a th:href="@{/searchByCategory(category='Nigeria')}"
+						th:classappend="${activeNigeria}? 'active'"
+						class="list-group-item">Nigeria</a> <a
+						th:href="@{/searchByCategory(category='RDC')}"
+						th:classappend="${activeRDC}? 'active'" class="list-group-item">République
+						Démocratique du Congo</a> <a
+						th:href="@{/searchByCategory(category='Rwanda')}"
+						th:classappend="${activeRwanda}? 'active'" class="list-group-item">Rwanda</a>
+					<a th:href="@{/searchByCategory(category='Senegal')}"
+						th:classappend="${activeSenegal}? 'active'"
+						class="list-group-item">Sénégal</a> <a
+						th:href="@{/searchByCategory(category='Soudan')}"
+						th:classappend="${activeSoudan}? 'active'" class="list-group-item">Soudan</a>
+					<a th:href="@{/searchByCategory(category='Suisse')}"
+						th:classappend="${activeSuisse}? 'active'" class="list-group-item">Suisse</a>
+					<a th:href="@{/searchByCategory(category='Srilanka')}"
+						th:classappend="${activeSrilanka}? 'active'"
+						class="list-group-item">Sri Lanka</a> <a
+						th:href="@{/searchByCategory(category='Tanzanie')}"
+						th:classappend="${activeTanzanie}? 'active'"
+						class="list-group-item">Tanzanie</a> <a
+						th:href="@{/searchByCategory(category='Tchad')}"
+						th:classappend="${activeTchad}? 'active'" class="list-group-item">Tchad</a>
+
+					<a th:href="@{/searchByCategory(category='Thailande')}"
+						th:classappend="${activeThailande}? 'active'"
+						class="list-group-item">Thailande</a> <a
+						th:href="@{/searchByCategory(category='Togo')}"
+						th:classappend="${activeTogo}? 'active'" class="list-group-item">Togo</a>
+					<a th:href="@{/searchByCategory(category='Tunisie')}"
+						th:classappend="${activeTunisie}? 'active'"
+						class="list-group-item">Tunisie</a> <a
+						th:href="@{/searchByCategory(category='Turquie')}"
+						th:classappend="${activeTurquie}? 'active'"
+						class="list-group-item">Turquie</a> <a
+						th:href="@{/searchByCategory(category='Pakistan')}"
+						th:classappend="${activePakistan}? 'active'"
+						class="list-group-item">Pakistan</a> <a
+						th:href="@{/searchByCategory(category='Vietnam')}"
+						th:classappend="${activeVietnam}? 'active'"
+						class="list-group-item">Viêt Nam</a>
+				</div>
+			</div>
+
+			<div class="col-xs-9">
+				<div th:if="${emptyList}">
+					<h5 style="font-style: italic;">Oops, Aucun résultat trouvé.
+						Veuillez réessayer plus tard.</h5>
+				</div>
+
+				<table border="0" id="bookList">
+					<thead>
+						<tr>
+							<th></th>
+						</tr>
+					</thead>
+					<tbody>
+						<tr class="book-item" data-th-each="book : ${bookList}">
+							<td>
+								<div th:if="${book != null}">
+									<div class="row" style="margin-bottom: 50px;">
+										<div class="col-xs-3">
+											<a th:href="@{/bookDetail?id=}+${book.id}"><img
+												style="visibility: hidden;"
+												class="img-responsive shelf-book"
+												th:src="@{/image/book/}+${book.id}+'.png'" /></a>
+										</div>
+										<div class="col-xs-9">
+											<span class="label label-pill label-primary">Port ou
+												aéroport d'arrivée</span> <a
+												th:href="@{/bookDetail?id=}+${book.id}"><h5
+													th:text="${book.title}"></h5> <span
+												class="label label-pill label-primary">Port ou
+													aéroport de départ</span> <a
+												th:href="@{/bookDetail?id=}+${book.id}"><h5
+														th:text="${book.arrivalPortAirport}"></h5> <span
+													class="label label-pill label-success">Pays
+														d'arrivée</span><br />
+													<p th:text="${book.category}"></p> <span
+													class="label label-pill label-danger">Date de départ</span><br />
+											</a> <span th:text="${book.publicationDate}"></span><br /> <span
+												class="label label-pill label-warning">Date d'arrivée
+													estimée</span><br /> </a> <span th:text="${book.estimateArrivalDate}"></span><br />
+
+
+
+											<span class="label label-pill label-success">Mode de
+												transport</span><br />
+											<p th:text="${book.mode}"></p>
+
+
+
+											<span class="label label-pill label-info">Transporteur</span><br />
+											<p th:text="${book.author}"></p>
+
+											<span class="label label-pill label-success">Format
+												souhaité</span><br /> <a th:href="@{/bookDetail?id=}+${book.id}">
+
+												<span th:text="${#strings.capitalize(book.format)}"></span>
+											</a> <br /> <span class="badge badge-pill badge-info">Prix
+												HT</span><br /> <a th:href="@{/bookDetail?id=}+${book.id}"><span
+												style="font-size: x-large; color: #db3208;"><span
+													th:text="${#numbers.formatDecimal(book.ourPrice, 0 , 'COMMA', 2, 'POINT')}"></span>
+													€</span></a> <span style="display: none;">$<span
+												th:text="${#numbers.formatDecimal(book.listPrice, 0 , 'COMMA', 2, 'POINT')}"></span></span>
+											<br /> <span class="badge badge-pill badge-info">Message</span><br />
+											<p th:utext="${#strings.abbreviate(book.description, 1000)}"></p>
+											
+											
+											
+											
+											
+											
+											
+			  <form th:action="@{/book/add}" method="post">
+
+				<div class="form-group">
+					<div class="input-group mb-3">
+						<div class="input-group-prepend">
+							<label class="input-group-text" for="inputGroupSelect03">Lieu
+								de r�ception des colis et conditions du transporteur:</label>
+						</div>
+						<textarea th:value="${book.description}" name="description"
+							class="form-control" id="Description"
+							placeholder="Pr�cisez les conditions du transport, lieux de reception du colis, extimative de la date d'arriv�e... "
+							required="required">     
+							</textarea>
+							
+							<button type="submit" class="btn btn-success">Ajouter</button>
+					<a class="btn btn-danger" th:href="@{/}">Annuler</a>
+				</div>
+			</fieldset>
+		</form>
+									
+									
+											
+										</div>
+									</div>
+									
+									
+														<!-- description -->
+          			
+									
+								</div>
+			
+			
+							</td>
+						</tr>
+					</tbody>
+				</table>
+			</div>
+			
+			
+			
+				
+
+					</div>
+				</div>
+	
+			
+		</div>
+	</div>
+	<!-- end of container -->
+	<div th:replace="common/header :: footer"></div>
+
+	<div th:replace="common/header :: body-bottom-scripts"></div>
+
+
+</body>
+</html>

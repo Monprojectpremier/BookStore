@@ -1,0 +1,170 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.w3.org/1999/xhtml"
+	xmlns:sec="http://www.w3.org/1999/xhtml">
+<head th:fragment="common-header">
+<meta charset="utf-8" />
+<meta http-equiv="X-UA-Compatible" content="IE=edge" />
+	<link href="stylesheets/reset.css" rel="stylesheet" type="text/css">
+    <link href="stylesheets/ma5-mobile-menu.css" rel="stylesheet" type="text/css">
+    <link href="stylesheets/site.css" rel="stylesheet" type="text/css">
+
+<title>Le's Bookstore</title>
+
+  	 <!--main css-->
+  	 
+    <link href="css/bootstrap.min.css" rel="stylesheet" type="text/css" />
+    <link href="css/style.css" rel="stylesheet" type="text/css" />
+    <link href="css/animate.css" rel="stylesheet" type="text/css" />	
+    <link href="css/responsive.css" rel="stylesheet" type="text/css" />	
+     <!-- Font awesome -->
+	<script src="https://kit.fontawesome.com/6ff322857f.js" crossorigin="anonymous"></script>
+
+    <!-- data table -->
+	<link th:href="@{/css/jquery.dataTables.min.css}" rel="stylesheet" />
+	<link th:href="@{/css/dataTables.bootstrap.min.css}" rel="stylesheet" />
+	<script src="https://js.stripe.com/v2/"></script>
+	<script src="https://js.stripe.com/v3/"></script>
+	<link th:href="@{css/font-awesome.min.css}" rel="stylesheet" />
+      
+    <!--google font-->
+  	<link href="https://fonts.googleapis.com/css2?family=Acme&display=swap" rel="stylesheet">
+  	<link href="https://fonts.googleapis.com/css2?family=Poppins&display=swap" rel="stylesheet">
+  	<link href="https://fonts.googleapis.com/css2?family=Titillium+Web&display=swap" rel="stylesheet">
+
+
+    <!--responsiv menu-->
+    <meta name="viewport" content="width=device-width, initial-scale=1, minimal-ui, user-scalable=no">
+    <link href="stylesheets/reset.css" rel="stylesheet" type="text/css">
+    <link href="stylesheets/ma5-mobile-menu.css" rel="stylesheet" type="text/css">
+    <link href="stylesheets/site.css" rel="stylesheet" type="text/css">
+  
+
+
+</head>
+
+<body>
+	<div th:fragment="navbar">
+	<section id="menu">
+	<nav class="navbar navbar-inverse">
+	  <div class="container">
+		    <div class="navbar-header">
+		      <button type="button" class="navbar-toggle" data-toggle="collapse" data-target="#myNavbar">
+		        <span class="icon-bar"></span>
+		        <span class="icon-bar"></span>
+		        <span class="icon-bar"></span>
+		      </button>
+		      <a class="navbar-brand" href="#"><img src="image/logo3.png"></a>
+		    </div>
+		    <div class="collapse navbar-collapse" id="myNavbar">
+		      <ul class="nav navbar-nav">
+		        <li class="active"><a th:href="@{/bookshelf}">Voir les annonces</a></li>
+		        <li><a th:href="@{/book/add}">Passer une annonce</a></li>
+		        <li><a th:href="@{/myProfile}">Mon compte</a></li>
+		        <li><a sec:authorize="isAnonymous()" th:href="@{/login}">Connexion</a></li>
+		        <li><a  sec:authorize="isAuthenticated()" th:href="@{/logout}">Deconnexion</a></li>
+		      </ul>
+		    </div>
+	  </div><!-- end container -->
+	</nav>
+</section>	
+			</div>
+			<!--/.container-fluid -->
+		
+		
+		
+		
+		
+		
+		
+		
+		
+		
+	</div>
+
+	<div th:fragment="footer">
+		<br />
+		<br />
+		
+<!-- *******footer-part-end****** -->
+<section id="footer">
+	<div class="container">
+		<div class="footer">
+			<div class="row">
+				<div class="col-md-4">
+					<div class="footer-left">
+						<a href=""><img src="image/logo3.png"></a>
+						<a href="https://github.com/twbs/bootstrap" target="_blank">Conditions Générales d'Utilisation (CGU)</a>
+						<a href="https://twitter.com/getbootstrap" target="_blank">Foire Aux Questions (FAQ)</a>
+					</div>
+				</div>
+				<div class="col-md-4">
+					<div class="footer-center">
+						<li><a href="tel:+880248956492"><i class="fas fa-phone-alt"></i>+88 02 48956492</a></li>
+						<li><a href="#"><i class="fas fa-envelope"></i>E-mail : hello@coshipping.fr</a></li>
+						<a href="https://twitter.com/mdo" target="_blank"><i class="fab fa-twitter-square"></i></a>
+						<a href="https://facebook.com/" target="_blank"><i class="fab fa-facebook-square"></i></a>
+					</div>
+				</div>
+				<div class="col-md-4">
+					<div class="footer-right">
+						<p>coshipping est le N° 1 de la plateforme collaborative de livraison de colis par particuliers par voie maritime. Réjoignez-nous sur	 <a href="https://twitter.com/mdo" rel="noopener" target="_blank">facebook </a> et sur <a href="https://twitter.com/fat" rel="noopener" target="_blank">twitter</a>.  <a href="https://github.com/orgs/twbs/people"></a> <a href="https://github.com/twbs/bootstrap/graphs/contributors"></a></p>
+					</div>
+				</div>
+			</div><!-- end row -->
+			<div class="footer-bootom">
+				<p>© 2020 - Tous droits réservés</p>
+				<p><a href="https://www.fiverr.com/sakibhosan?up_rollout=true" target="_blank"><i class="" aria-hidden="true"></i> <span></span></a></p>
+			</div>
+		</div>
+	</div><!-- end container -->
+</section>
+<!-- *******footer-part-end****** -->
+
+
+
+
+
+
+  
+    
+
+
+    <!-- Bootstrap core JavaScript
+    ================================================== -->
+    <!-- Placed at the end of the document so the pages load faster -->
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.12.4/jquery.min.js"></script>
+    <script>window.jQuery || document.write('<script src="../../assets/js/vendor/jquery.min.js"><\/script>')</script>
+    <script src="../../dist/js/bootstrap.min.js"></script>
+    <!-- IE10 viewport hack for Surface/desktop Windows 8 bug -->
+    <script src="../../assets/js/ie10-viewport-bug-workaround.js"></script>
+ 
+
+
+
+
+
+
+
+
+
+
+</div>
+	<div th:fragment="body-bottom-scripts">
+		<!--/.container-fluid 	<script th:src="@{/js/jquery.min.js}"></script>
+		<script th:src="@{/js/bootstrap.min.js}"></script>
+-->
+
+
+	  <script src="https://oss.maxcdn.com/html5shiv/3.7.3/html5shiv.min.js"></script>
+	  <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.12.4/jquery.min.js"></script>
+      <script src="https://oss.maxcdn.com/respond/1.4.2/respond.min.js"></script>
+
+		<script th:src="@{/js/scripts.js}"></script>
+
+		<!-- data table -->
+		<script th:src="@{/js/jquery.dataTables.min.js}"></script>
+		<script th:src="@{/js/dataTables.bootstrap.min.js}"></script>
+		
+	</div>
+</body>
+</html>
